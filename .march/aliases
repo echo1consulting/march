@@ -1,0 +1,14 @@
+alias ..="cd .."
+alias ...="cd ../.."
+
+alias h='cd ~'
+alias c='clear'
+alias art=artisan
+alias l='ls -al'
+
+alias hello=hello-world
+
+function hello-world() {
+    echo "Hello World."
+}
+

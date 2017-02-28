@@ -1,0 +1,18 @@
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 1
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+# folders:
+#   - map: ~/March
+#      to: /home/vagrant/March
+
+# ports:
+#     - send: 80
+#       to: 8080
