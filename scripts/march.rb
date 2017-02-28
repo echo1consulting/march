@@ -28,6 +28,7 @@ class March
 
     # Configure A Few VirtualBox Settings
     config.vm.provider "virtualbox" do |vb|
+      vb.gui = false
       vb.name = settings["name"] ||= "march-1"
       vb.customize ["modifyvm", :id, "--memory", settings["memory"] ||= "4048"]
       vb.customize ["modifyvm", :id, "--cpus", settings["cpus"] ||= "1"]
@@ -154,6 +155,12 @@ class March
     config.vm.provision "shell" do |s|
         s.name = "Install Mosquitto Broker & Client"
         s.path = scriptDir + "/install-mosquitto.sh"
+    end
+
+    # Install Wireshark
+    config.vm.provision "shell" do |s|
+        s.name = "Install Wireshark"
+        s.path = scriptDir + "/install-wireshark.sh"
     end
     
   end
