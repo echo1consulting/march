@@ -15,6 +15,12 @@ require File.expand_path(File.dirname(__FILE__) + '/scripts/march.rb')
 # Configure the virtual machine
 Vagrant.configure("2") do |config|
 
+    # Copy wireshark desktop
+    config.vm.provision :file do |file|
+      file.source = File.dirname(__FILE__) + "/shortcuts/wireshark.desktop"
+      file.destination =  "~/Desktop/" + "wireshark" + ".desktop"
+    end
+
     # Set the path to the aliases file
     aliasesPath = confDir + "/aliases"
 

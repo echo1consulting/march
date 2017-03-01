@@ -151,17 +151,23 @@ class March
         s.path = scriptDir + "/execute-bootstrap.sh"
     end
 
+    # Install Lubuntu
+    #config.vm.provision "shell" do |s|
+    #    s.name = "Install Lubuntu"
+    #    s.path = scriptDir + "/install-lubuntu.sh"
+    #end
+    
     # Install Mosquitto Client and Broker
-    config.vm.provision "shell" do |s|
-        s.name = "Install Mosquitto Broker & Client"
-        s.path = scriptDir + "/install-mosquitto.sh"
-    end
+    #config.vm.provision "shell" do |s|
+     #   s.name = "Install Mosquitto Broker & Client"
+     #   s.path = scriptDir + "/install-mosquitto.sh"
+    #end
 
     # Install Wireshark
-    config.vm.provision "shell" do |s|
-        s.name = "Install Wireshark"
-        s.path = scriptDir + "/install-wireshark.sh"
-    end
+    #config.vm.provision "shell" do |s|
+    #    s.name = "Install Wireshark"
+    #    s.path = scriptDir + "/install-wireshark.sh"
+    #end
     
   end
 end

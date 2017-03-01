@@ -1,0 +1,79 @@
+[Desktop Entry]
+# $Id: wireshark.desktop 39689 2011-10-31 16:53:23Z gerald $
+# The format of this file is specified at
+# http://freedesktop.org/Standards/desktop-entry-spec
+# The entries are in the order they are listed in version 1.0
+Type=Application
+Version=1.0
+Name=Wireshark
+Name[vi]=Wireshark
+GenericName=Network Analyzer
+GenericName[af]=Netwerk Analiseerder
+GenericName[az]=S?b?k? Analiz Proqrami
+GenericName[bg]=?????????? ?? ??????? ??????
+GenericName[bs]=Mrežni analizer
+GenericName[ca]=Analitzador de xarxa
+GenericName[cs]=Analyzátor síte
+GenericName[da]=Netværksanalyse
+GenericName[de]=Programm für die Netzwerk-Analyse
+GenericName[el]=??a??t?? ???t???
+GenericName[en_GB]=Network Analyser
+GenericName[eo]=Retanalizilo
+GenericName[es]=Analizador de redes
+GenericName[et]=Võrguliikluse analüsaator
+GenericName[eu]=Sare ikerketaria
+GenericName[fa]=???????? ????
+GenericName[fi]=Verkkoanalysaattori
+GenericName[fr]=Analyseur réseau
+GenericName[he]=????? ???
+GenericName[hr]=Program za analiziranje mreža
+GenericName[hu]=hálózatanalizáló
+GenericName[id]=Analisis jaringan
+GenericName[is]=Netskoðunartól
+GenericName[it]=Analizzatore di rete
+GenericName[ja]=???????????
+GenericName[ko]=??? ???
+GenericName[lo]=??????????????????????
+GenericName[lt]=Tinklo analizatorius
+GenericName[lv]=Tikla Analizators
+GenericName[mk]=?????????? ?? ?????
+GenericName[mn]=??????-?????????? ???????
+GenericName[mt]=Analizzatur tan-network
+GenericName[nb]=Nettverksanalysator
+GenericName[nl]=netwerkanalyseprogramma
+GenericName[nn]=Nettverksanalysator
+GenericName[nso]=Moahlaahli wa Kgokagano
+GenericName[pl]=Analizator sieci
+GenericName[pt]=Analisador de Redes
+GenericName[pt_BR]=Analisador de rede
+GenericName[ro]=Analizor de retea
+GenericName[ru]=?????????? ???????? ???????
+GenericName[se]=Fierbmeanalysa
+GenericName[sk]=Analyzátor siete
+GenericName[sl]=Analizator omrežij
+GenericName[sr]=Analizatror mreže
+GenericName[ss]=Sihlatiyi seluchungechunge
+GenericName[sv]=Nätverksanalyserare
+GenericName[ta]=Å¨Ä ¬öÅ¡Ç÷
+GenericName[th]=????????????????????????????
+GenericName[tr]=Ag Analiz Programi
+GenericName[uk]=?????????? ??????
+GenericName[ven]=Musengulusi wa Vhukwamani
+GenericName[vi]=Trình phân tích  m?ng
+GenericName[xh]=Umcukucezi Womsebenzi womnatha
+GenericName[zh_CN]=??????
+GenericName[zh_TW]=??????
+GenericName[zu]=Umhloli Woxhumano olusakazekile
+Comment=Network traffic analyzer
+Comment[fi]=Verkkoliikenne analysaattori
+Comment[fr]=Analyseur de trafic réseau
+Comment[sv]=Nätverkstrafikanalysator
+Icon=wireshark
+TryExec=wireshark
+Exec=wireshark %f
+Terminal=false
+MimeType=application/vnd.tcpdump.pcap;
+# Categorie entry according to version 1.0 of
+# http://www.freedesktop.org/wiki/Specifications/menu-spec
+Categories=GNOME;Network;
+Encoding=UTF-8
