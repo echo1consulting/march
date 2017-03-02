@@ -1,4 +1,4 @@
-class March
+    class March
   def March.configure(config, settings)
     # Set The VM Provider
     ENV['VAGRANT_DEFAULT_PROVIDER'] = settings["provider"] ||= "virtualbox"
