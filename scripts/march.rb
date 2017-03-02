@@ -13,7 +13,7 @@ class March
     config.ssh.forward_agent = true
 
     # Configure The Box
-    config.vm.box = settings["box"] ||= "hashicorp/precise64"
+    config.vm.box = settings["box"] ||= "ubuntu/xenial64"
     config.vm.hostname = settings["hostname"] ||= "march"
 
     # Configure A Private Network IP
@@ -92,7 +92,7 @@ class March
     if settings.include? 'authorize'
       if File.exists? File.expand_path(settings["authorize"])
         config.vm.provision "shell" do |s|
-          s.inline = "echo $1 | grep -xq \"$1\" /home/vagrant/.ssh/authorized_keys || echo \"\n$1\" | tee -a /home/vagrant/.ssh/authorized_keys"
+          s.inline = "echo $1 | grep -xq \"$1\" /home/ubuntu/.ssh/authorized_keys || echo \"\n$1\" | tee -a /home/ubuntu/.ssh/authorized_keys"
           s.args = [File.read(File.expand_path(settings["authorize"]))]
         end
       end
@@ -103,7 +103,7 @@ class March
       settings["keys"].each do |key|
         config.vm.provision "shell" do |s|
           s.privileged = false
-          s.inline = "echo \"$1\" > /home/vagrant/.ssh/$2 && chmod 600 /home/vagrant/.ssh/$2"
+          s.inline = "echo \"$1\" > /home/ubuntu/.ssh/$2 && chmod 600 /home/ubuntu/.ssh/$2"
           s.args = [File.read(File.expand_path(key)), key.split('/').last]
         end
       end
