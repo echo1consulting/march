@@ -67,6 +67,7 @@
 
     # Default Port Forwarding
     default_ports = {
+      21     => 21,
       1883   => 1883,
       9001   => 9001,
       5601   => 5601
