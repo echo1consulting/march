@@ -18,9 +18,15 @@ Vagrant.configure("2") do |config|
     # Copy wireshark desktop
     config.vm.provision :file do |file|
       file.source = File.dirname(__FILE__) + "/shortcuts/wireshark.desktop"
-      file.destination =  "~/Desktop/" + "wireshark" + ".desktop"
+      file.destination =  "~/Desktop/" + "wireshark.desktop"
     end
 
+    # Copy wireshark install
+    config.vm.provision :file do |file|
+      file.source = File.dirname(__FILE__) + "/shortcuts/wireshark_install.sh"
+      file.destination =  "~/Desktop/" + "wireshark_install.sh"
+    end
+    
     # Set the path to the aliases file
     aliasesPath = confDir + "/aliases"
 
