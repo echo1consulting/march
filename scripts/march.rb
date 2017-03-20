@@ -11,6 +11,9 @@
 
     # Allow SSH Agent Forward from The Box
     config.ssh.forward_agent = true
+    
+    # Keep ssh connection alive
+    config.ssh.keep_alive = true
 
     # Configure The Box
     config.vm.box = settings["box"] ||= "ubuntu/xenial64"
@@ -70,8 +73,10 @@
       21     => 21,
       80     => 80,
       1883   => 1883,
+      8883   => 8883,
       9001   => 9001,
       9200   => 9200,
+      9883   => 9883,
       5601   => 5601
     }
 

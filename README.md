@@ -20,7 +20,9 @@
 All virtual machine ports are forward to the host machine on the following ports:
 
 - 1883 - MQTT
+- 8883 - MQTT (TLS/SSL)
 - 9001 - MQTT Websockets
+- 9883 - MQTT Websockets (TLS/SSL)
 
 ### Coming Soon
 

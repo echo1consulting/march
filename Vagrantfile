@@ -15,16 +15,10 @@ require File.expand_path(File.dirname(__FILE__) + '/scripts/march.rb')
 # Configure the virtual machine
 Vagrant.configure("2") do |config|
 
-    # Copy wireshark desktop
+    # Copy mosquitto configuration
     config.vm.provision :file do |file|
-      file.source = File.dirname(__FILE__) + "/shortcuts/wireshark.desktop"
-      file.destination =  "~/Desktop/" + "wireshark.desktop"
-    end
-
-    # Copy wireshark install
-    config.vm.provision :file do |file|
-      file.source = File.dirname(__FILE__) + "/shortcuts/wireshark_install.sh"
-      file.destination =  "~/Desktop/" + "wireshark_install.sh"
+        file.source = File.dirname(__FILE__) + "/conf/mosquitto.conf"
+        file.destination =  "/etc/mosquitto/conf.d/mosquitto.conf"
     end
     
     # Set the path to the aliases file
