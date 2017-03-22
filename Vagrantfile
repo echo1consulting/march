@@ -14,12 +14,18 @@ require File.expand_path(File.dirname(__FILE__) + '/scripts/march.rb')
 
 # Configure the virtual machine
 Vagrant.configure("2") do |config|
-
-    # Copy mosquitto configuration
+    
+    # Copy mosquitto configuration to temp directory
     config.vm.provision :file do |file|
         file.source = File.dirname(__FILE__) + "/conf/mosquitto.conf"
-        file.destination =  "/etc/mosquitto/conf.d/mosquitto.conf"
+        file.destination =  "/tmp/mosquitto.conf"
     end
+    
+    # Copy generateCA to temp directory
+    config.vm.provision :file do |file|
+        file.source = File.dirname(__FILE__) + "/conf/generateCA.sh"
+        file.destination =  "/tmp/generateCA.sh"
+    end    
     
     # Set the path to the aliases file
     aliasesPath = confDir + "/aliases"
@@ -37,7 +43,7 @@ Vagrant.configure("2") do |config|
 
     # Instantiate the configuration settings
     March.configure(config, settings)
-
+    
     # Set the path to the scripts to run after provision
     afterScriptPath = confDir + "/after.sh"
 

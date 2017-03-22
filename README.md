@@ -13,6 +13,9 @@
 - Mosquitto Client
   - [mosquitto_sub](https://mosquitto.org/man/mosquitto_sub-1.html) - e.g. ```mosquitto_sub -h localhost -t "my_topic" -v```
   - [mosquitto_pub](https://mosquitto.org/man/mosquitto_pub-1.html) - e.g. ```mosquitto_pub -h localhost -t "my_topic" -m "Hello MQTT"```
+
+### Optional Configuration
+
 - [Wireshark](https://www.wireshark.org) - Network protocol analyzer (included in GUI)
 
 ### Port Forwarding
@@ -23,6 +26,14 @@ All virtual machine ports are forward to the host machine on the following ports
 - 8883 - MQTT (TLS/SSL)
 - 9001 - MQTT Websockets
 - 9883 - MQTT Websockets (TLS/SSL)
+
+### TLS/SSL
+
+Self-signed certificates are located at ```/etc/ssl/march/```. Mosquitto is configured to accept MQTT and Websockets (secure and non-secure).
+
+```mosquitto_pub --cafile /etc/ssl/march/ca.crt -h localhost -t "test" -m "message" -p 8883```
+
+```mosquitto_sub -t \$SYS/broker/bytes/\# -v --cafile /etc/ssl/march/ca.crt -p 8883```
 
 ### Coming Soon
 
