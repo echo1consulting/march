@@ -22,7 +22,7 @@ function update_package_repositories()
 ################################################################################
 function install_default_packages()
 {
-    sudo apt-get install autoconf build-essential cmake daemon debconf-utils devscripts docbook-xsl firefox golang-go libc-ares-dev libssl-dev make protobuf-compiler python python-pip python-setuptools python-software-properties quilt software-properties-common uuid-dev xsltproc -y 
+    sudo apt-get install autoconf build-essential cmake daemon debconf-utils devscripts docbook-xsl firefox golang-go libc-ares-dev libssl-dev make protobuf-compiler python python-pip python-setuptools python-software-properties quilt software-properties-common uuid-dev virtualbox-guest-additions-iso xsltproc -y 
     echo "Installed default packages."
 }
 
@@ -87,6 +87,20 @@ function install_mosquitto_server()
 }
 
 ################################################################################
+# Install Apache Server
+################################################################################
+function install_apache_server() 
+{
+    sudo apt-get install apache
+    sudo chown -R ubuntu:ubuntu /var/www/
+    sudo a2enmod headers
+    # TODO: enable allowoverride
+    # Insert htacces files "Header set Access-Control-Allow-Origin "*""
+    sudo service apache2 reload
+    echo "Complete Apache Install."
+}
+
+################################################################################
 # Install Lubuntu Core
 ################################################################################
 function install_lubuntu_core()
@@ -110,5 +124,6 @@ install_latest_java
 setup_certificates
 install_mosquitto_client
 install_mosquitto_server
+install_apache_server
 install_lubuntu_core
 execute_cleanup

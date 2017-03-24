@@ -38,6 +38,8 @@
       vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
       vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
       vb.customize ["modifyvm", :id, "--ostype", "Ubuntu_64"]
+      vb.customize [ "modifyvm", :id, "--uart1", "0x3F8", "4" ]
+      vb.customize [ "modifyvm", :id, "--uartmode1", "file", "console.log" ]
     end
 
     # Configure A Few VMware Settings
