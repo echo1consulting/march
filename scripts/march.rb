@@ -160,12 +160,19 @@
         s.name = "Execute Bootstrap Scripts"
         s.path = scriptDir + "/execute-bootstrap.sh"
     end
-
-    # Install Wireshark
-    #config.vm.provision "shell" do |s|
-    #    s.name = "Install Wireshark"
-    #    s.path = scriptDir + "/install-wireshark.sh"
-    #end
     
+    # Execute Pre-Puppet Scripts
+    config.vm.provision "shell", inline: "sudo apt-get install puppet -y"
+    config.vm.provision "shell", inline: "sudo touch /etc/puppet/hiera.yaml" 
+    config.vm.provision "shell", inline: "sudo mkdir -p /home/ubuntu/.puppet/" 
+    config.vm.provision "shell", inline: "sudo touch /home/ubuntu/.puppet/hiera.yaml" 
+    config.vm.provision "shell", inline: "sudo puppet module install maestrodev-wget --version 1.7.3"
+    config.vm.provision "shell", inline: "sudo puppet module install puppetlabs-apt --version 2.3.0"
+
+    # Execute Puppet Scripts
+    config.vm.provision "puppet" do |puppet|
+        puppet.module_path = "modules"
+    end
+      
   end
 end
