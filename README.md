@@ -42,5 +42,7 @@ The virtual machine is configured with self-signed certificated that are located
 
 ## Coming Soon...
 
+- [MQTT RSMB](https://github.com/eclipse/mosquitto.rsmb)
+- [MQTT SN CLI](https://github.com/njh/mqtt-sn-tools)
 - [MQTT Web Client](https://github.com/hivemq/hivemq-mqtt-web-client)
-- [Wireshark](https://www.wireshark.org) - Network protocol analyzer (included in GUI)
+- [Wireshark](https://www.wireshark.org)
