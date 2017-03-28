@@ -42,6 +42,7 @@ The virtual machine is configured with self-signed certificated that are located
 
 ## Coming Soon...
 
+- [Mosquitto Auth](https://github.com/jpmens/mosquitto-auth-plug)
 - [MQTT RSMB](https://github.com/eclipse/mosquitto.rsmb)
 - [MQTT SN CLI](https://github.com/njh/mqtt-sn-tools)
 - [MQTT Web Client](https://github.com/hivemq/hivemq-mqtt-web-client)
