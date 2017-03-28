@@ -21,12 +21,6 @@ Vagrant.configure("2") do |config|
     #    file.destination =  "/tmp/mosquitto.conf"
     #end
     
-    # Copy generateCA to temp directory
-    #config.vm.provision :file do |file|
-    #    file.source = File.dirname(__FILE__) + "/conf/generateCA.sh"
-    #    file.destination =  "/tmp/generateCA.sh"
-    #end    
-    
     # Set the path to the aliases file
     aliasesPath = confDir + "/aliases"
 

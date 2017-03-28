@@ -1,40 +1,46 @@
-## March
 
-### Getting Started
+
+[TOC]
+
+## Getting Started
 
 1. Clone this repository to a working directory.
 2. Copy the directory /.march to your home directory.
 3. Execute the command ```vagrant up``` in the repository directory.
 4. Execute the command ```vagrant ssh``` in the repository directory.
 
-### Included Configuration
+## Configured Software
 
-- Mosquitto Server (MQTT & Websocket Support)
-- Mosquitto Client
-  - [mosquitto_sub](https://mosquitto.org/man/mosquitto_sub-1.html) - e.g. ```mosquitto_sub -h localhost -t "my_topic" -v```
-  - [mosquitto_pub](https://mosquitto.org/man/mosquitto_pub-1.html) - e.g. ```mosquitto_pub -h localhost -t "my_topic" -m "Hello MQTT"```
+### Mosquitto
 
-### Optional Configuration
+- Mosquitto Server (MQTT & Websocket Support) ```/etc/mosquitto/mosquitto.conf```
+  - 1883 - MQTT
+  - 8883 - MQTT (TLS/SSL)
+  - 9001 - MQTT Websockets
+  - 9883 - MQTT Websockets (TLS/SSL)
+- Mosquitto Client (CLI)
+  - MQTT
+    - ```mosquitto_pub -h localhost -t "my_topic" -m "Hello MQTT"```
+    - ```mosquitto_sub -h localhost -t "my_topic" -v```
+  - MQTT (TLS/SSL)
+    - ```mosquitto_pub --cafile /etc/ssl/march/ca.crt -h localhost -t "test" -m "message" -p 8883```
+    - ```mosquitto_sub -t \$SYS/broker/bytes/\# -v --cafile /etc/ssl/march/ca.crt -p 8883```
 
-- [Wireshark](https://www.wireshark.org) - Network protocol analyzer (included in GUI)
+
+
+## System Configuration
 
 ### Port Forwarding
 
 All virtual machine ports are forward to the host machine on the following ports:
 
-- 1883 - MQTT
-- 8883 - MQTT (TLS/SSL)
-- 9001 - MQTT Websockets
-- 9883 - MQTT Websockets (TLS/SSL)
+### Self-Signed Certificates (TLS/SSL)
 
-### TLS/SSL
+The virtual machine is configured with self-signed certificated that are located at ```/etc/ssl/march/```. 
 
-Self-signed certificates are located at ```/etc/ssl/march/```. Mosquitto is configured to accept MQTT and Websockets (secure and non-secure).
 
-```mosquitto_pub --cafile /etc/ssl/march/ca.crt -h localhost -t "test" -m "message" -p 8883```
 
-```mosquitto_sub -t \$SYS/broker/bytes/\# -v --cafile /etc/ssl/march/ca.crt -p 8883```
-
-### Coming Soon
+## Coming Soon...
 
 - [MQTT Web Client](https://github.com/hivemq/hivemq-mqtt-web-client)
+- [Wireshark](https://www.wireshark.org) - Network protocol analyzer (included in GUI)
